@@ -7,6 +7,7 @@
     }
     th {
         font-size: 18px;
+        background: transparent;
     }
     td {
             align-content: center;
@@ -15,6 +16,7 @@
         width: 20px;
         height: 20px;
     }
+
     tr.active {
         td {
             --bs-table-bg-type: #d1e7dd;
@@ -46,7 +48,7 @@
 }
 
 .todo-container {
-    padding-top: 200px;
+    padding-top: 250px;
 }
 
 #root {
