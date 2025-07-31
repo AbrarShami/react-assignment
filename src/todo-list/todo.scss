@@ -8,6 +8,9 @@
     th {
         font-size: 18px;
     }
+    td {
+            align-content: center;
+    }
     input[type='checkbox'] {
         width: 20px;
         height: 20px;
@@ -16,5 +19,38 @@
         td {
             --bs-table-bg-type: #d1e7dd;
         }
+        .todo-text {
+            b {
+                text-decoration: line-through;
+            }
+        }
     }
+    .form-check-input{
+        box-shadow: none;
+    }
+
+    .btn.save,
+    .todo-update {
+        display: none;
+    }
+    .edit-todo {
+        .btn.edit,
+        .todo-text {
+            display: none;
+        }
+        .btn.save,
+        .todo-update {
+            display: block;
+        }
+    }
+}
+
+.todo-container {
+    padding-top: 200px;
+}
+
+#root {
+    background: url(https://img.freepik.com/free-photo/notebook-glasses-crop-laptop-near-coffee_23-2147777915.jpg?t=st=1753947526~exp=1753951126~hmac=536dc86…&w=1380) center center no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
