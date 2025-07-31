@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap/scss/bootstrap.scss';
 import App from './App';
+import TodoApp from './todo-list/todo';
+import Counter from './counter/counter';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <TodoApp name="Todo List" />
+    {/* <Counter /> */}
   </React.StrictMode>
 );
 
