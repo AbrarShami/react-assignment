@@ -58,13 +58,12 @@ function Todo(props) {
         }
 
         setTodo('');
-
     }
     return (
         <div className='container todo-container'>
             <form className="row g-3 align-items-end justify-content-center" onSubmit={addtodo}>
                 <div className="col-7">
-                    <h5>Add a new task</h5>
+                    <h5>Add task</h5>
                     <input type="text" onChange={TodoText} value={todo} className="form-control" id="addTodo" placeholder="Todo task" />
                 </div>
     
