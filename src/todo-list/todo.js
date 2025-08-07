@@ -76,17 +76,10 @@ function Todo(props) {
             <div className='row mt-5 justify-content-center'>
                 <div className='col-8'>
                     <div>
-                        <div><h2 className='text-center my-5'>My {props.name}</h2></div>
+                        {todolist.length > 0 ? <div><h2 className='text-center my-5'>My {props.name}</h2></div> : ''}
+                       
                         <table className="table  todo-table table-primary table-striped-columns">
-                            {/* <thead>
-                                <tr>
-                                    <th className='width-50' scope="col">#</th>
 
-                                    <th className='width-150 text-center' scope="col">Complete</th>
-                                    <th scope="col">Tasks</th>
-                                    <th className='width-150 text-center ' scope="col">Delete</th>
-                                </tr>
-                            </thead> */}
                             <tbody>
                                 {todolist.map((td, index) => 
                                     <tr key={td.key} className={td.taskStatus ? 'active' :'not-active'}>
