@@ -2,6 +2,21 @@
 .App {
   text-align: center;
 }
+#root {
+    background: url(https://images.pexels.com/photos/18772168/pexels-photo-18772168.jpeg) center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+html {
+    &.dark {
+        h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1,body,p {
+        color: #fff;
+        }
+        #root {
+          background-image: url(https://images.pexels.com/photos/1730/dawn-sunset-night-sunrise.jpg);
+        }
+    }
+}
 
 .App-logo {
   height: 40vmin;
