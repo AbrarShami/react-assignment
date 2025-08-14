@@ -13,8 +13,8 @@ function NavRout() {
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/taskList' element={<ViewTasklist/>}/>
             <Route path='/setting' element={<Settings/>}/>
-            <Route path='/tasks/:taskId' element={<Tasklist/>}/>
-            <Route path='/tasks/:taskId/taskview/:task' element={<Taskdetail/>}/>
+            <Route path='/tasks/:taskId' element={<Taskdetail/>}/>
+            {/* <Route path='/tasks/:taskId/taskview/:task' element={<Taskdetail/>}/> */}
         </Routes>
 
   )

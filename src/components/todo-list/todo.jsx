@@ -64,10 +64,11 @@ function Todo(props) {
     return (
         <div className='container todo-container'>
             <TodoForm todo={todo} onChange={TodoText} onSubmit={addtodo} />
-
+        
             <div className='row mt-5 justify-content-center'>
                 <div className='col-8'>
                     <div>
+
                         {todolist.length > 0 ? <div><h2 className='text-center my-5'>My Todolist</h2></div> : ''}
                        
                         <table className="table  todo-table table-primary table-striped-columns">
