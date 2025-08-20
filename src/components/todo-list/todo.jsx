@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import TodoForm from './TodoForm';
 import { Link } from 'react-router-dom';
 import Tasklist from './creatTasklist';
+import { TodoContext } from './todoContext';
 
 function Todo(props) {
      const [todo, setTodo] = useState('');
      const [updateTodotext, setupdateTodotext] = useState('');
-     const [todolist, setTodolist] = useState([]);
+     const {todolist, setTodolist} = useContext(TodoContext);
 
     const todoStatus = (key) => {
         const updateList = todolist.map((todo) => todo.key === key ? {...todo, taskStatus: !todo.taskStatus} : todo);
@@ -51,8 +52,7 @@ function Todo(props) {
             const newEntry = {
                 key: new Date().getTime(),
                 text: todoValue,
-                taskStatus: false,
-                edit: false
+                taskStatus: false
             }
             setTodolist([...todolist, newEntry]);
         } else {
@@ -74,7 +74,7 @@ function Todo(props) {
                         <table className="table  todo-table table-primary table-striped-columns">
 
                             <tbody>
-                                <Tasklist editable={true} todolist={todolist} editTodo={editTodo} updateTodo={updateTodo} deleteTodo={deleteTodo} updateText={updateText} updateTodotext={updateTodotext} todoStatus={todoStatus} />
+                                <Tasklist todolist={todolist} editTodo={editTodo} updateTodo={updateTodo} deleteTodo={deleteTodo} updateText={updateText} updateTodotext={updateTodotext} />
                                 {/* <Tasklist editable={false} todolist={todolist}  todoStatus={todoStatus} /> */}
                             </tbody>
                         </table>

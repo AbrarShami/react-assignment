@@ -16,8 +16,8 @@ function Nav() {
                     <div className='col-sm-6'>
                         <div className="">
                             <div className="navbar-nav">
-                                <Link className={`nav-link active link-${reverseTheme}`} aria-current="page" to="/">Home</Link>
-                                <Link className={`nav-link  link-${reverseTheme}`} to="/taskList">Tasks</Link>
+                                <Link className={`nav-link active link-${reverseTheme}`} aria-current="page" to="/">Dasboard</Link>
+                                <Link className={`nav-link  link-${reverseTheme}`} to="/addTask">Add Tasks</Link>
                                 <Link className={`nav-link  link-${reverseTheme}`} to="/setting">Settings</Link>
                             </div>
                         </div>
