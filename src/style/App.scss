@@ -15,6 +15,12 @@ html {
         h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1,body,p {
         color: #fff;
         }
+        .card,
+        .modal  {
+          h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1,body,p {
+        color: #111;
+        }
+        }
         #root {
           background-image: url(../../public/images/dark-bg.jpg);
         }
