@@ -19,15 +19,15 @@
         width: 20px;
         height: 20px;
     }
-
+.todo-text {
+    text-align: center;
+}
     tr.active {
         td {
             --bs-table-bg-type: #d1e7dd;
         }
         .todo-text {
-            b {
                 text-decoration: line-through;
-            }
         }
     }
     .form-check-input{
@@ -53,4 +53,7 @@
 .todo-container {
     padding-top: 50px;
     text-align: left;
+}
+.navbar {
+    border-bottom: 1px solid #111;
 }

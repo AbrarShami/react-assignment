@@ -1,19 +1,19 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-const Tasklist = ({editTodo, deleteTodo, updateTodo, updateText, updateTodotext, todolist, todoStatus}) => {
+const Tasklist = ({editTodo, deleteTodo, updateTodo, updateText, updateTodotext, todolist, todoStatus, description}) => {
     return (
         todolist.map((td, index) =>
-        <tr key={td.key} task-status={td.taskStatus ? 'completed' : 'pending'}>
+        <tr key={td.key} className={td.taskStatus ? 'active' : ''}>
             <td className='width-50 text-center'>{td.srnum} {index +1}</td>
-            {/* <td className='text-center width-50'>
+            <td className='text-center width-50'>
                 <input className="form-check-input" type="checkbox" checked={td.taskStatus} onChange={() =>todoStatus(td.key)} />
-            </td> */}
-            {/* <td className='text-center width-50' area-value={td.taskStatus}>
+            </td>
+            <td className='text-center width-100' area-value={td.taskStatus}>
                 <span>{td.taskStatus ? 'Completed' : 'Pending'}</span>
-            </td>  */}
+            </td> 
             <td className={td.edit? 'edit-todo' : ''}>
-                <div className='todo-text'>{td.text}</div>
+                <div title={description} className='todo-text'>{td.text}</div>
                 <div className='todo-update'> <input type="text" onChange={updateText}  value={updateTodotext} className="form-control" id="addTodo" placeholder="Todo task" /></div>
             </td>
             <td className='text-center width-50'>

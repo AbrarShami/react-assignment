@@ -7,7 +7,9 @@ import { ThemeContext } from '../settings/ThemeContext';
 
 function Nav() {
   const {active} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
   const reverseTheme = active ==='dark'? 'light' : 'dark';
+  
   return (
     <>
         <nav className={`navbar navbar-expand bg-${active}`}>
@@ -17,13 +19,13 @@ function Nav() {
                         <div className="">
                             <div className="navbar-nav">
                                 <Link className={`nav-link active link-${reverseTheme}`} aria-current="page" to="/">Dasboard</Link>
-                                <Link className={`nav-link  link-${reverseTheme}`} to="/addTask">Add Tasks</Link>
+                                <Link className={`nav-link active link-${reverseTheme}`} aria-current="page" to="/tasks">Tasks</Link>
                                 <Link className={`nav-link  link-${reverseTheme}`} to="/setting">Settings</Link>
                             </div>
                         </div>
                     </div>
                     <div className='align-items-center col-sm-6 d-flex justify-content-end'>
-                        <ThemeSwitch activeTheme={reverseTheme}/>
+                        <label>Selected Theme: <b>{theme}</b></label>
                     </div>
                 </div>
             </div>
