@@ -7,13 +7,13 @@ const ThemeSwitch = ({activeTheme}) => {
   return (
     <>
         
-    <div className='container my-5'>
+    <div className='container my-5 px-5'>
       <div className='align-items-center justify-content-center row'>
-        <div className='col-2'>
+        <div className='col-md-2'>
           <label>Select Theme :</label>
         </div>
-        <div className='col-2'>
-        <select class="form-select" value={theme} onChange={(e) => setTheme(e.target.value)}>
+        <div className='col-md-2'>
+        <select class="form-select mt-3 mt-md-0" value={theme} onChange={(e) => setTheme(e.target.value)}>
             <option value="system">System</option>
             <option value="dark">Dark</option>
             <option value="light">Light</option>
