@@ -26,6 +26,31 @@ html {
         }
     }
 }
+  .alert.status {
+    font-size: 12px;
+    font-weight: 500;
+  }
+.dashbaord {
+  table {
+
+  }
+  .tasks-count {
+    .card-title {
+      color: #fff
+    }
+  }
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #111;
+    border-color: #32383e;
+}
+.table .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
 
 .App-logo {
   height: 40vmin;

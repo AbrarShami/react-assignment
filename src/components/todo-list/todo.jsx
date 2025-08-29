@@ -6,6 +6,7 @@ import { TodoContext } from './todoContext';
 import FilterTasks from './filterTasklist';
 
 function Todo() {
+  const [show, setShow] = useState(false);
   const [todo, setTodo] = useState('');
   const [todoDescription, setTodoDescription] = useState('');
   const [updateTodotext, setupdateTodotext] = useState('');
@@ -68,6 +69,7 @@ function Todo() {
     if (todo && todoDescription) {
       const newEntry = {
         key: new Date().getTime(),
+        date: new Date().toLocaleDateString(),
         text: todo,
         description: todoDescription,
         taskStatus: false,
@@ -77,7 +79,8 @@ function Todo() {
       alert('please enter Task');
     }
     setTodo('');
-    setTodoDescription('')
+    setTodoDescription('');
+    setShow(false);
   };
 
   return (
@@ -86,13 +89,21 @@ function Todo() {
       <div className='row  justify-content-center'>
         <div className='col-10'>
           <div>
-              <div className='row my-5'>
-                <div className='col-8'><h2>My Todolist</h2></div>
-                <div className='col-4 d-flex justify-content-end'><TodoForm todo={todo} todoDescription={todoDescription} onTitleChange={TodoText} onDescriptioChange={TodoDescription} onSubmit={addtodo} /></div>
-              </div>
-            {todolist.length > 0 && (
+
+            {todolist.length > 0 ? (
+              <>
+                <div className='row my-5'>
+                  <div className='col-3'><h2>My Todolist</h2></div>
+                  <div className='col-4 d-flex'><TodoForm modalShow={show} setModal={setShow} todo={todo} todoDescription={todoDescription} onTitleChange={TodoText} onDescriptioChange={TodoDescription} onSubmit={addtodo} /></div>
+                </div>
                 <FilterTasks checkStatus={checkStatus} setCheckStatus={setCheckStatus} search={search} setSearch={setSearch} />
-            )}
+              </>
+            ) :(<>
+            <h1 className='text-center'>Add Tasks</h1>
+            <div className='text-center my-4'>
+                  <TodoForm modalShow={show} setModal={setShow} todo={todo} todoDescription={todoDescription} onTitleChange={TodoText} onDescriptioChange={TodoDescription} onSubmit={addtodo} />
+            </div>
+            </>)}
             <table className="table todo-table table-primary table-striped-columns">
               <tbody>
                 <Tasklist todolist={filteredList} description={todoDescription}  editTodo={editTodo} todoStatus={todoStatus} updateTodo={updateTodo} deleteTodo={deleteTodo} updateText={updateText} updateTodotext={updateTodotext} />

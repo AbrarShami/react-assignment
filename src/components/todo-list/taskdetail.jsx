@@ -13,7 +13,7 @@ const Taskdetail = () => {
       <h1 className="mb-4">Task Detail</h1>
       <div className="card p-4 w-75 m-auto">
         <h3 >Title: {task.text}</h3>
-        <p className='my-2'>Status: {task.taskStatus ? 'Completed' : 'Pending'}</p>
+        <p className='my-2'>Status: {task.taskStatus ? (<span className='alert p-1 alert-success'>Completed</span>) : (<span className='alert p-1 alert-warning'>Pending</span>)}</p>
         <p>Description: {task.description || 'No description provided'}</p>
       </div>
       <Link to="/tasks" className="btn btn-secondary mt-3">Back to Tasks</Link>
